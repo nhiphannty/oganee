@@ -46,20 +46,20 @@
         position: absolute;
         right: 18px;
         top: 9px;
-        content: '\33';
-        font-family: 'ElegantIcons';
+        content: "\33";
+        font-family: "ElegantIcons";
         font-size: 18px;
         color: $white-color;
     }
 }
 
 .hero__categories {
-
     ul {
         border: 1px solid $border;
         padding-left: 40px;
         padding-top: 10px;
         padding-bottom: 12px;
+        display: none;
 
         li {
             list-style: none;
@@ -87,7 +87,6 @@
     float: left;
 
     form {
-        
         .hero__search__categories {
             width: 30%;
             float: left;
@@ -97,7 +96,8 @@
             padding-left: 18px;
             padding-top: 11px;
             position: relative;
-
+            cursor: pointer;
+            
             // Vertical line
             &:after {
                 position: absolute;
@@ -106,7 +106,7 @@
                 height: 20px;
                 width: 1px;
                 background: $black-color;
-                opacity: .1;
+                opacity: 0.1;
                 content: "";
             }
 
@@ -180,7 +180,6 @@
 }
 
 .hero__text {
-
     span {
         font-size: 14px;
         text-transform: uppercase;

@@ -1,17 +1,15 @@
-import React from "react";
+import { Outlet } from "react-router-dom";
 import Footer from "./Footer/Footer";
 import Header from "./Header/Header";
 
-type Props = { children: React.ReactNode };
-
-function Layout({ children }: Props) {
-    return <div>
-        <Header />
+function Layout() {
+    return (
         <div>
-            {children}
+            <Header />
+            <Outlet />
+            <Footer />
         </div>
-        <Footer />
-    </div>;
+    );
 }
 
 export default Layout;
