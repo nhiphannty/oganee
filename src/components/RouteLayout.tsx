@@ -1,17 +1,31 @@
-import { Routes, Route, BrowserRouter } from "react-router-dom";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import { HomePath, ShopPath } from "../common/constants/RoutePath";
 import Layout from "../components/Layout";
-import { routeList } from "../common/constants/routes/RouteList";
+import Loader from "../components/Loader";
+import Error from "../pages/Error/Error";
+import Home from "../pages/Home/Index";
+import Shop from "../pages/Shop/Index";
 
 export default function RouteLayout() {
-    return (
-        <BrowserRouter>
-            <Routes>
-                <Route element={<Layout />}>
-                    {routeList.map((route, i) => (
-                        <Route key={i} path={route.path} element={<route.element />} errorElement={<route.errorElement />} />
-                    ))}
-                </Route>
-            </Routes>
-        </BrowserRouter>
-    );
+    const router = createBrowserRouter([
+        {
+            element: <Layout />,
+            children: [
+                {
+                    path: HomePath,
+                    element: <Home />,
+                    loader: Loader,
+                    errorElement: <Error />,
+                },
+                {
+                    path: ShopPath,
+                    element: <Shop />,
+                    loader: Loader,
+                    errorElement: <Error />,
+                },
+            ],
+        },
+    ]);
+
+    return <RouterProvider router={router} />;
 }

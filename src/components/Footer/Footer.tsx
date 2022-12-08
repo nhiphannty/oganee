@@ -1,7 +1,7 @@
 import { Link, NavLink } from "react-router-dom";
 import logo from "../../assets/img/logo.png";
 import paymentItem from "../../assets/img/payment-item.png";
-import { HomePath } from "../../common/constants/routes/RoutePath";
+import { HomePath } from "../../common/constants/RoutePath";
 
 export default function Footer() {
     return (

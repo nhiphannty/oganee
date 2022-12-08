@@ -1,6 +1,6 @@
 import banner from "../../assets/img/hero/banner.jpg";
 import { Link } from "react-router-dom";
-import { ShopPath } from "../../common/constants/routes/RoutePath";
+import { ShopPath } from "../../common/constants/RoutePath";
 
 export default function Home() {
     return (

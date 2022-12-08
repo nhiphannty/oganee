@@ -1,7 +1,7 @@
 import { NavLink } from "react-router-dom";
 import language from "../../assets/img/language.png";
 import logo from "../../assets/img/logo.png";
-import { BlogPath, ContactPath, HomePath, ShopPath } from "../../common/constants/routes/RoutePath";
+import { BlogPath, ContactPath, HomePath, ShopPath } from "../../common/constants/RoutePath";
 
 function Header() {
     return (
