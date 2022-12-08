@@ -1,0 +1,46 @@
+[
+    {
+        "Id": "58073d06-4e7a-496b-a774-0ed269d5f4dd",
+        "Name": "Fresh Meat"
+    },
+    {
+        "Id": "db84797e-1844-4335-a06e-5c072f64462b",
+        "Name": "Vegetables"
+    },
+    {
+        "Id": "53c3f824-56ae-4802-bc7a-8633b4a98b47",
+        "Name": "Fruit & Nut Gifts"
+    },
+    {
+        "Id": "a9d8d6b9-b0b4-40ee-aa4a-fcbe86705679",
+        "Name": "Fresh Berries"
+    },
+    {
+        "Id": "39e47519-ab08-4b6c-974e-23a964d7beb7",
+        "Name": "Ocean Foods"
+    },
+    {
+        "Id": "7ee7baa9-66f0-49ff-8987-d6a3f6f7be0c",
+        "Name": "Butter & Eggs"
+    },
+    {
+        "Id": "f35084e1-2937-4f2b-931c-eb44ffce781c",
+        "Name": "Fastfood"
+    },
+    {
+        "Id": "41354665-fbb9-443a-ba0a-1ab602f13322",
+        "Name": "Fresh Onion"
+    },
+    {
+        "Id": "dcb89feb-17e4-4f2d-9a0f-74d27c40b3d5",
+        "Name": "Papayaya & Crisps"
+    },
+    {
+        "Id": "92aba016-6f38-4f81-91c4-8e3863066b7e",
+        "Name": "Oatmeal"
+    },
+    {
+        "Id": "2e77eeba-d841-4285-b044-57ba4a4c0e28",
+        "Name": "Fresh Bananas"
+    }
+]
