@@ -1,9 +1,11 @@
+import { useState } from "react";
 import { NavLink } from "react-router-dom";
 import language from "../../assets/img/language.png";
 import logo from "../../assets/img/logo.png";
 import { BlogPath, ContactPath, HomePath, ShopPath } from "../../common/constants/RoutePath";
 
 function Header() {
+    const [showAllDepartments, setShowAllDepartments] = useState(false);
     return (
         <div>
             <header className="header">
@@ -116,11 +118,18 @@ function Header() {
                     <div className="row">
                         <div className="col-lg-3">
                             <div className="hero__categories">
-                                <div className="hero__categories__all">
+                                <div
+                                    className="hero__categories__all"
+                                    onClick={() => setShowAllDepartments(!showAllDepartments)}>
                                     <i className="fa fa-bars"></i>
                                     <span>All Departments</span>
                                 </div>
-                                <ul>
+                                <ul
+                                    className={`${
+                                        showAllDepartments
+                                            ? "hero__categories__all__open"
+                                            : "hero__categories__all__close"
+                                    }`}>
                                     <li>
                                         <NavLink to={HomePath}>Fresh Meat</NavLink>
                                     </li>
@@ -165,7 +174,10 @@ function Header() {
                                             All Categories
                                             <span className="arrow_carrot-down"></span>
                                         </div>
-                                        <input type="text" placeholder="What are you looking for?" />
+                                        <input
+                                            type="text"
+                                            placeholder="What are you looking for?"
+                                        />
                                         <button type="submit" className="site-btn">
                                             SEARCH
                                         </button>
