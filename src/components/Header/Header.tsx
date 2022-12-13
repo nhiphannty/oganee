@@ -1,11 +1,29 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import { useSelector } from "react-redux";
 import { NavLink } from "react-router-dom";
 import language from "../../assets/img/language.png";
 import logo from "../../assets/img/logo.png";
-import { BlogPath, ContactPath, HomePath, ShopPath } from "../../common/constants/RoutePath";
+import { LOVING_CART, SHOPPING_CART } from "../../common/constants/localStorageKeys";
+import { BlogPath, ContactPath, HomePath, ShopPath } from "../../common/constants/routePath";
+import { IProduct } from "../../common/interfaces/IProduct";
+import { IShoppingCart } from "../../common/interfaces/IShoppingCart";
+import { getLocalStorage } from "../../common/localStorage/hook";
+import { useAppDispatch } from "../../store";
+import { fetchCategoryRequest } from "../../store/category/actions";
+import { getCategoriesSelector } from "../../store/category/selectors";
 
 function Header() {
     const [showAllDepartments, setShowAllDepartments] = useState(false);
+    const dispatch = useAppDispatch();
+    const categories = useSelector(getCategoriesSelector);
+
+    const shoppingCart = getLocalStorage<IShoppingCart[]>(SHOPPING_CART, []);
+    const lovingCart = getLocalStorage<IProduct[]>(LOVING_CART, []);
+
+    useEffect(() => {
+        dispatch(fetchCategoryRequest());
+    });
+
     return (
         <div>
             <header className="header">
@@ -93,12 +111,14 @@ function Header() {
                                 <ul>
                                     <li>
                                         <NavLink to={HomePath}>
-                                            <i className="fa fa-heart"></i> <span>1</span>
+                                            <i className="fa fa-heart"></i>{" "}
+                                            <span>{lovingCart.length ?? 0}</span>
                                         </NavLink>
                                     </li>
                                     <li>
                                         <NavLink to={HomePath}>
-                                            <i className="fa fa-shopping-bag"></i> <span>3</span>
+                                            <i className="fa fa-shopping-bag"></i>{" "}
+                                            <span>{shoppingCart.length ?? 0}</span>
                                         </NavLink>
                                     </li>
                                 </ul>
@@ -130,39 +150,11 @@ function Header() {
                                             ? "hero__categories__all__open"
                                             : "hero__categories__all__close"
                                     }`}>
-                                    <li>
-                                        <NavLink to={HomePath}>Fresh Meat</NavLink>
-                                    </li>
-                                    <li>
-                                        <NavLink to={HomePath}>Vegetables</NavLink>
-                                    </li>
-                                    <li>
-                                        <NavLink to={HomePath}>Fruit & Nut Gifts</NavLink>
-                                    </li>
-                                    <li>
-                                        <NavLink to={HomePath}>Fresh Berries</NavLink>
-                                    </li>
-                                    <li>
-                                        <NavLink to={HomePath}>Ocean Foods</NavLink>
-                                    </li>
-                                    <li>
-                                        <NavLink to={HomePath}>Butter & Eggs</NavLink>
-                                    </li>
-                                    <li>
-                                        <NavLink to={HomePath}>Fastfood</NavLink>
-                                    </li>
-                                    <li>
-                                        <NavLink to={HomePath}>Fresh Onion</NavLink>
-                                    </li>
-                                    <li>
-                                        <NavLink to={HomePath}>Papayaya & Crisps</NavLink>
-                                    </li>
-                                    <li>
-                                        <NavLink to={HomePath}>Oatmeal</NavLink>
-                                    </li>
-                                    <li>
-                                        <NavLink to={HomePath}>Fresh Bananas</NavLink>
-                                    </li>
+                                    {categories.map((cate, index) => (
+                                        <li key={index}>
+                                            <NavLink to={HomePath}>{cate.name}</NavLink>
+                                        </li>
+                                    ))}
                                 </ul>
                             </div>
                         </div>
@@ -170,10 +162,10 @@ function Header() {
                             <div className="hero__search">
                                 <div className="hero__search__form">
                                     <form action="#">
-                                        <div className="hero__search__categories">
+                                        {/* <div className="hero__search__categories">
                                             All Categories
                                             <span className="arrow_carrot-down"></span>
-                                        </div>
+                                        </div> */}
                                         <input
                                             type="text"
                                             placeholder="What are you looking for?"

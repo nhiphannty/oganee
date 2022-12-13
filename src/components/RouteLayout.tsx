@@ -1,5 +1,5 @@
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import { HomePath, ShopPath } from "../common/constants/RoutePath";
+import { HomePath, ShopPath } from "../common/constants/routePath";
 import Layout from "../components/Layout";
 import Loader from "../components/Loader";
 import Error from "../pages/Error/Error";
