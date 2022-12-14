@@ -2,53 +2,342 @@
     "categories": [
         {
             "id": "58073d06-4e7a-496b-a774-0ed269d5f4dd",
-            "name": "Fresh Meat"
+            "name": "Fresh Fruit",
+            "image": "cat-1.jpg"
         },
         {
             "id": "db84797e-1844-4335-a06e-5c072f64462b",
-            "name": "Vegetables"
+            "name": "Dried Fruit",
+            "image": "cat-2.jpg"
         },
         {
             "id": "53c3f824-56ae-4802-bc7a-8633b4a98b47",
-            "name": "Fruit & Nut Gifts"
+            "name": "Vegetables",
+            "image": "cat-3.jpg"
         },
         {
             "id": "a9d8d6b9-b0b4-40ee-aa4a-fcbe86705679",
-            "name": "Fresh Berries"
+            "name": "Fruit Drinks",
+            "image": "cat-4.jpg"
         },
         {
             "id": "39e47519-ab08-4b6c-974e-23a964d7beb7",
-            "name": "Ocean Foods"
-        },
-        {
-            "id": "7ee7baa9-66f0-49ff-8987-d6a3f6f7be0c",
-            "name": "Butter & Eggs"
-        },
-        {
-            "id": "f35084e1-2937-4f2b-931c-eb44ffce781c",
-            "name": "Fastfood"
-        },
-        {
-            "id": "41354665-fbb9-443a-ba0a-1ab602f13322",
-            "name": "Fresh Onion"
-        },
-        {
-            "id": "dcb89feb-17e4-4f2d-9a0f-74d27c40b3d5",
-            "name": "Papayaya & Crisps"
-        },
-        {
-            "id": "92aba016-6f38-4f81-91c4-8e3863066b7e",
-            "name": "Oatmeal"
-        },
-        {
-            "id": "2e77eeba-d841-4285-b044-57ba4a4c0e28",
-            "name": "Fresh Bananas"
+            "name": "Fresh Meat",
+            "image": "cat-5.jpg"
         }
     ],
     "products": [
         {
-            "id": "",
-            "name": ""
+            "id": "ed050f77-26f2-45fc-ba01-0e2fff345f00",
+            "name": "Apple",
+            "categoryId": "58073d06-4e7a-496b-a774-0ed269d5f4dd",
+            "image": "apples-red-fresh-mellow-juicy-perfect-whole-white-desk.jpg",
+            "price": 5,
+            "createdDate": "1997-07-16T19:20+01:00",
+            "heart": 0,
+            "isFeatured": false,
+            "color": "Red",
+            "size": "Small",
+            "discount": 2
+        },
+        {
+            "id": "8682a40e-e8ee-40aa-8b5d-09d1fc931b9a",
+            "name": "Strawberry",
+            "categoryId": "58073d06-4e7a-496b-a774-0ed269d5f4dd",
+            "image": "closeup-shot-fresh-ripe-strawberries-isolated-white-surface.jpg",
+            "price": 5,
+            "createdDate": "2022-11-21T19:20+01:00",
+            "heart": 4,
+            "isFeatured": false,
+            "color": "Red",
+            "size": "Small",
+            "discount": 0
+        },
+        {
+            "id": "46127f8e-a417-4f79-92d1-f5613a62ec7f",
+            "name": "Kiwi",
+            "categoryId": "58073d06-4e7a-496b-a774-0ed269d5f4dd",
+            "image": "fresh-kiwi-fruit-isolated.jpg",
+            "price": 5,
+            "createdDate": "2021-03-25T19:20+01:00",
+            "heart": 2,
+            "isFeatured": false,
+            "color": "",
+            "size": "Medium",
+            "discount": 0
+        },
+        {
+            "id": "d9b9efe3-8ab6-4adf-9f76-ddc8e00f4585",
+            "name": "Orange",
+            "categoryId": "58073d06-4e7a-496b-a774-0ed269d5f4dd",
+            "image": "n6t1Rr_J_400x400.png",
+            "price": 8,
+            "createdDate": "2022-02-01T19:20+01:00",
+            "heart": 58,
+            "isFeatured": false,
+            "color": "",
+            "size": "Medium",
+            "discount": 0
+        },
+        {
+            "id": "1e4beb25-554d-4ed7-9a94-8c5016235e9d",
+            "name": "Red Dried Goji Berries",
+            "categoryId": "db84797e-1844-4335-a06e-5c072f64462b",
+            "image": "red-dried-goji-berries-wooden-spoon.jpg",
+            "price": 41,
+            "createdDate": "2022-12-13T19:20+01:00",
+            "heart": 29,
+            "isFeatured": false,
+            "color": "",
+            "size": "Tiny",
+            "discount": 0
+        },
+        {
+            "id": "56d4bd3e-d61f-4f23-9b4c-09e36dacdbd0",
+            "name": "Prunes",
+            "categoryId": "db84797e-1844-4335-a06e-5c072f64462b",
+            "image": "prunes.jpg",
+            "price": 4,
+            "createdDate": "2022-11-21T19:20+01:00",
+            "heart": 571,
+            "isFeatured": false,
+            "color": "",
+            "size": "Tiny",
+            "discount": 5
+        },
+        {
+            "id": "f9b28855-bc6a-4631-9af8-4f6ed918c4da",
+            "name": "Cedar Pine Nuts",
+            "categoryId": "db84797e-1844-4335-a06e-5c072f64462b",
+            "image": "cedar-pine-nuts.jpg",
+            "price": 6,
+            "createdDate": "2022-07-16T19:20+01:00",
+            "heart": 76,
+            "isFeatured": false,
+            "color": "",
+            "size": "Tiny",
+            "discount": 0
+        },
+        {
+            "id": "44d018d9-2bc1-4851-8876-1dcc50ad7238",
+            "name": "Dried Orange",
+            "categoryId": "db84797e-1844-4335-a06e-5c072f64462b",
+            "image": "front-view-dried-orange-rings-sweets-inside-outside-little-plate-white-desk-fruit-dry-raisin-color.jpg",
+            "price": 20,
+            "createdDate": "2022-07-16T19:20+01:00",
+            "heart": 20,
+            "isFeatured": false,
+            "color": "Orange",
+            "size": "Small",
+            "discount": 8
+        },
+        {
+            "id": "16b7df26-a258-4fb2-8889-a95992eeddc2",
+            "name": "Dried Pineapple",
+            "categoryId": "db84797e-1844-4335-a06e-5c072f64462b",
+            "image": "top-view-dried-pineapple-slices-isolated-white-background.jpg",
+            "price": 6,
+            "createdDate": "2022-12-06T19:20+01:00",
+            "heart": 76,
+            "isFeatured": false,
+            "color": "Yellow",
+            "size": "Small",
+            "discount": 0
+        },
+        {
+            "id": "84e364e5-61e5-4a22-aa21-71b535027dcf",
+            "name": "Almond Nuts",
+            "categoryId": "db84797e-1844-4335-a06e-5c072f64462b",
+            "image": "almond-nuts-forming-heart-shape-black-background.jpg",
+            "price": 2,
+            "createdDate": "2022-05-076T19:20+01:00",
+            "heart": 96,
+            "isFeatured": false,
+            "color": "",
+            "size": "Tiny",
+            "discount": 7
+        },
+        {
+            "id": "1b1c6074-e187-4423-a2fa-f383eaea09f4",
+            "name": "Closeup Shot Nnuts Raisins",
+            "categoryId": "db84797e-1844-4335-a06e-5c072f64462b",
+            "image": "closeup-shot-nuts-raisins-mix-bowl-wooden-surface.jpg",
+            "price": 29.9,
+            "createdDate": "2019-07-16T19:20+01:00",
+            "heart": 9,
+            "isFeatured": false,
+            "color": "",
+            "size": "Tiny",
+            "discount": 8
+        },
+        {
+            "id": "1cd21c48-0401-4eb1-839d-1dfcc69b58e0",
+            "name": "Dried Bbanana",
+            "categoryId": "db84797e-1844-4335-a06e-5c072f64462b",
+            "image": "sliced-dried-banana.jpg",
+            "price": 12,
+            "createdDate": "2022-02-29T19:20+01:00",
+            "heart": 12,
+            "isFeatured": false,
+            "color": "",
+            "size": "Medium",
+            "discount": 0
+        },
+        {
+            "id": "303715ac-357c-4687-a621-3f621d9422d4",
+            "name": "Tomato",
+            "categoryId": "53c3f824-56ae-4802-bc7a-8633b4a98b47",
+            "image": "one-fresh-red-tomato-isolated-white.jpg",
+            "price": 6,
+            "createdDate": "2021-01-16T19:20+01:00",
+            "heart": 76,
+            "isFeatured": false,
+            "color": "Red",
+            "size": "Small",
+            "discount": 0
+        },
+        {
+            "id": "365e6868-f271-4baf-9aff-9ccb67a7aeb3",
+            "name": "Lettuce",
+            "categoryId": "53c3f824-56ae-4802-bc7a-8633b4a98b47",
+            "image": "white-vegetable-healthy-fresh-natural.jpg",
+            "price": 9,
+            "createdDate": "2022-03-28T19:20+01:00",
+            "heart": 56,
+            "isFeatured": false,
+            "color": "",
+            "size": "Medium",
+            "discount": 0
+        },
+        {
+            "id": "ff369e41-a8f7-4963-9cd5-8756187014a1",
+            "name": "Mushroom",
+            "categoryId": "53c3f824-56ae-4802-bc7a-8633b4a98b47",
+            "image": "254965_web.jpg",
+            "price": 11,
+            "createdDate": "2022-07-16T19:20+01:00",
+            "heart": 133,
+            "isFeatured": false,
+            "color": "White",
+            "size": "Small",
+            "discount": 0
+        },
+        {
+            "id": "1c175c74-4294-4a2a-a1b4-cf13864030ea",
+            "name": "Red Chili",
+            "categoryId": "53c3f824-56ae-4802-bc7a-8633b4a98b47",
+            "image": "pexels-john-bastian-9185580.jpg",
+            "price": 2,
+            "createdDate": "2022-07-16T19:20+01:00",
+            "heart": 777,
+            "isFeatured": false,
+            "color": "Red",
+            "size": "Tiny",
+            "discount": 0
+        },
+        {
+            "id": "fa8cbb45-458e-4631-ac53-c1388af4b582",
+            "name": "Original Passion Fruit Juice Rich Vitamin C",
+            "categoryId": "a9d8d6b9-b0b4-40ee-aa4a-fcbe86705679",
+            "image": "Passion_fruit_juice_400ml_PET.jpg",
+            "price": 1,
+            "createdDate": "2022-08-11T19:20+01:00",
+            "heart": 61,
+            "isFeatured": false,
+            "color": "",
+            "size": "Medium",
+            "discount": 0
+        },
+        {
+            "id": "7918b62e-6eeb-410b-abf3-9cb06f20b680",
+            "name": "Mixed Fruit Juice Drink",
+            "categoryId": "a9d8d6b9-b0b4-40ee-aa4a-fcbe86705679",
+            "image": "best-natural-mixed-fruit-juice-drink.jpg",
+            "price": 1.2,
+            "createdDate": "2022-08-29T19:20+01:00",
+            "heart": 12,
+            "isFeatured": false,
+            "color": "",
+            "size": "Medium",
+            "discount": 0
+        },
+        {
+            "id": "7383035c-4c6c-4f95-945a-3ef6e9541060",
+            "name": "100% Juice Mixed Fruit Juice Drink 2L",
+            "categoryId": "a9d8d6b9-b0b4-40ee-aa4a-fcbe86705679",
+            "image": "2L-Orange-juice-100-juice.jpg",
+            "price": 4,
+            "createdDate": "2022-09-11T19:20+01:00",
+            "heart": 51,
+            "isFeatured": false,
+            "color": "",
+            "size": "Large",
+            "discount": 0
+        },
+        {
+            "id": "2083aeb9-2fe3-437f-acb6-5d16fd3b5202",
+            "name": "300ml Basil Seed Passion Fruit Juice Drink",
+            "categoryId": "a9d8d6b9-b0b4-40ee-aa4a-fcbe86705679",
+            "image": "Basil-SEED-DRINK-PASSION-FRUIT-577x600.jpg",
+            "price": 4,
+            "createdDate": "2022-09-19T19:20+01:00",
+            "heart": 123,
+            "isFeatured": false,
+            "color": "",
+            "size": "Medium",
+            "discount": 0
+        },
+        {
+            "id": "92d98722-c2f6-48c2-9cea-1f2e37e345cb",
+            "name": "Beef",
+            "categoryId": "39e47519-ab08-4b6c-974e-23a964d7beb7",
+            "image": "jez-timms-DVRXFIH42d0-unsplash.jpg",
+            "price": 119,
+            "createdDate": "2022-10-19T19:20+01:00",
+            "heart": 512,
+            "isFeatured": true,
+            "color": "Red",
+            "size": "Medium",
+            "discount": 0
+        },
+        {
+            "id": "c798ed55-8ada-4a10-9973-8a9519a88282",
+            "name": "Fish",
+            "categoryId": "39e47519-ab08-4b6c-974e-23a964d7beb7",
+            "image": "food-photographer-DL4nwJFNGOs-unsplash.jpg",
+            "price": 59,
+            "createdDate": "2022-07-16T19:20+01:00",
+            "heart": 1,
+            "isFeatured": true,
+            "color": "Orange",
+            "size": "Small",
+            "discount": 0
+        },
+        {
+            "id": "a1444d0f-73a9-4bd8-9d7b-4cf4037e8b53",
+            "name": "Pork Leg",
+            "categoryId": "39e47519-ab08-4b6c-974e-23a964d7beb7",
+            "image": "62e4a24588df4955b7d32da92b574792.jpg",
+            "price": 29,
+            "createdDate": "2022-07-16T19:20+01:00",
+            "heart": 438,
+            "isFeatured": false,
+            "color": "Red",
+            "size": "Medium",
+            "discount": 10
+        },
+        {
+            "id": "68dcd82a-4a19-4e21-9402-6ac64236674e",
+            "name": "Chicken Drumstick",
+            "categoryId": "39e47519-ab08-4b6c-974e-23a964d7beb7",
+            "image": "Frozen-chicken-vs-fresh-chicken.jpg",
+            "price": 19,
+            "createdDate": "2022-12-09T19:20+01:00",
+            "heart": 291,
+            "isFeatured": false,
+            "color": "Yellow",
+            "size": "Medium",
+            "discount": 0
         }
     ]
 }
