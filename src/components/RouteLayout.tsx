@@ -22,6 +22,12 @@ export default function RouteLayout() {
                     element: <Shop />,
                     loader: Loader,
                     errorElement: <Error />,
+                    // children: [
+                    //     {
+                    //         path: "/:id",
+                    //         element: <Shop />,
+                    //     },
+                    // ],
                 },
             ],
         },

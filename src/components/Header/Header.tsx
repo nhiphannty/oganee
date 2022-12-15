@@ -1,5 +1,4 @@
 import { useEffect, useState } from "react";
-import { useSelector } from "react-redux";
 import { NavLink } from "react-router-dom";
 import language from "../../assets/img/language.png";
 import logo from "../../assets/img/logo.png";
@@ -8,20 +7,19 @@ import { BlogPath, ContactPath, HomePath, ShopPath } from "../../common/constant
 import { IProduct } from "../../common/interfaces/IProduct";
 import { IShoppingCart } from "../../common/interfaces/IShoppingCart";
 import { getLocalStorage } from "../../common/localStorage/hook";
-import { useAppDispatch } from "../../store";
+import { useAppDispatch, useAppSelector } from "../../store";
 import { fetchCategoryRequest } from "../../store/category/actions";
-import { getCategoriesSelector } from "../../store/category/selectors";
 
 function Header() {
-    const [showAllDepartments, setShowAllDepartments] = useState(false);
+    const [showAllCategories, setShowAllCategories] = useState(false);
     const dispatch = useAppDispatch();
-    const categories = useSelector(getCategoriesSelector);
+    const categories = useAppSelector((state) => state.category?.categories);
 
     const shoppingCart = getLocalStorage<IShoppingCart[]>(SHOPPING_CART, []);
     const lovingCart = getLocalStorage<IProduct[]>(LOVING_CART, []);
 
     useEffect(() => {
-        dispatch(fetchCategoryRequest());
+        // dispatch(fetchCategoryRequest());
     });
 
     return (
@@ -140,13 +138,13 @@ function Header() {
                             <div className="hero__categories">
                                 <div
                                     className="hero__categories__all"
-                                    onClick={() => setShowAllDepartments(!showAllDepartments)}>
+                                    onClick={() => setShowAllCategories(!showAllCategories)}>
                                     <i className="fa fa-bars"></i>
                                     <span>All Departments</span>
                                 </div>
                                 <ul
                                     className={`${
-                                        showAllDepartments
+                                        showAllCategories
                                             ? "hero__categories__all__open"
                                             : "hero__categories__all__close"
                                     }`}>

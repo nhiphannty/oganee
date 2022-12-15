@@ -1,9 +1,12 @@
 export function getLocalStorage<T>(key: string, defaultValue: T): T {
-    let value = localStorage.getItem(key);
-    return value ? JSON.parse(value) : defaultValue;
+    let value = window.localStorage.getItem(key);
+    if (value) {
+        let parsedValue: T = JSON.parse(value);
+        return parsedValue;
+    } else return defaultValue;
 }
 
 export function setLocalStorage<T>(key: string, value: T) {
     let stringifyValue = JSON.stringify(value);
-    localStorage.setItem(key, stringifyValue);
+    window.localStorage.setItem(key, stringifyValue);
 }

@@ -16,6 +16,7 @@ const categoryReducer = (state = initialState, action: CategoryActions) => {
                 pending: true,
             };
         case CATEGORY.FETCH_SUCCESS:
+            console.log(1);
             return {
                 ...state,
                 pending: false,

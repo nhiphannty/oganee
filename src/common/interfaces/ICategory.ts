@@ -3,6 +3,7 @@ import { CATEGORY } from "../constants/actionTypes";
 export interface ICategory {
     id: string;
     name: string;
+    image: string;
 }
 
 export interface CategoryState {
