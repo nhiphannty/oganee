@@ -8,18 +8,19 @@ import { IProduct } from "../../common/interfaces/IProduct";
 import { IShoppingCart } from "../../common/interfaces/IShoppingCart";
 import { getLocalStorage } from "../../common/localStorage/hook";
 import { useAppDispatch, useAppSelector } from "../../store";
+import { getCategories } from "../../store/category/reducer";
 
 function Header() {
     const [showAllCategories, setShowAllCategories] = useState(false);
     const dispatch = useAppDispatch();
-    const categories = useAppSelector((state) => state.categoryReducer?.categories);
+    const { categories } = useAppSelector((state) => state.categoryReducer);
 
     const shoppingCart = getLocalStorage<IShoppingCart[]>(SHOPPING_CART, []);
     const lovingCart = getLocalStorage<IProduct[]>(LOVING_CART, []);
 
     useEffect(() => {
-        // dispatch(getCategories());
-    });
+        dispatch(getCategories());
+    }, [dispatch]);
 
     return (
         <div>

@@ -1,7 +1,12 @@
+const categoryImages = require.context("../../assets/img/categories");
+const productImages = require.context("../../assets/img/products");
+
 export const getCategoryImage = async (imageName: string) => {
-    return `/img/categories/${imageName}`;
+    let temp = categoryImages(`./${imageName}`);
+    return temp;
 };
 
-export const getProductImage = (image: string) => {
-    return `../../assets/img/products/${image}`;
+export const getProductImage = (imageName: string) => {
+    let temp = productImages(`./${imageName}`);
+    return temp;
 };
