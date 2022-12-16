@@ -18,7 +18,7 @@ export default function Hero() {
                                     100% Organic
                                 </h2>
                                 <p>Free Pickup and Delivery Available</p>
-                                <Link to={ShopPath} className="primary-btn">
+                                <Link to={ShopPath.path} className="primary-btn">
                                     SHOP NOW
                                 </Link>
                             </div>

@@ -11,7 +11,7 @@ export default function Footer() {
                     <div className="col-lg-3 col-md-6 col-sm-6">
                         <div className="footer__about">
                             <div className="footer__about__logo">
-                                <Link to={HomePath}>
+                                <Link to={HomePath.path}>
                                     <img src={logo} alt="" />
                                 </Link>
                             </div>
@@ -28,42 +28,42 @@ export default function Footer() {
                             <h6>Useful Links</h6>
                             <ul>
                                 <li>
-                                    <NavLink to={HomePath}>About Us</NavLink>
+                                    <NavLink to={HomePath.path}>About Us</NavLink>
                                 </li>
                                 <li>
-                                    <NavLink to={HomePath}>About Our Shop</NavLink>
+                                    <NavLink to={HomePath.path}>About Our Shop</NavLink>
                                 </li>
                                 <li>
-                                    <NavLink to={HomePath}>Secure Shopping</NavLink>
+                                    <NavLink to={HomePath.path}>Secure Shopping</NavLink>
                                 </li>
                                 <li>
-                                    <NavLink to={HomePath}>Delivery infomation</NavLink>
+                                    <NavLink to={HomePath.path}>Delivery infomation</NavLink>
                                 </li>
                                 <li>
-                                    <NavLink to={HomePath}>Privacy Policy</NavLink>
+                                    <NavLink to={HomePath.path}>Privacy Policy</NavLink>
                                 </li>
                                 <li>
-                                    <NavLink to={HomePath}>Our Sitemap</NavLink>
+                                    <NavLink to={HomePath.path}>Our Sitemap</NavLink>
                                 </li>
                             </ul>
                             <ul>
                                 <li>
-                                    <NavLink to={HomePath}>Who Are We</NavLink>
+                                    <NavLink to={HomePath.path}>Who Are We</NavLink>
                                 </li>
                                 <li>
-                                    <NavLink to={HomePath}>Our Services</NavLink>
+                                    <NavLink to={HomePath.path}>Our Services</NavLink>
                                 </li>
                                 <li>
-                                    <NavLink to={HomePath}>Projects</NavLink>
+                                    <NavLink to={HomePath.path}>Projects</NavLink>
                                 </li>
                                 <li>
-                                    <NavLink to={HomePath}>Contact</NavLink>
+                                    <NavLink to={HomePath.path}>Contact</NavLink>
                                 </li>
                                 <li>
-                                    <NavLink to={HomePath}>Innovation</NavLink>
+                                    <NavLink to={HomePath.path}>Innovation</NavLink>
                                 </li>
                                 <li>
-                                    <NavLink to={HomePath}>Testimonials</NavLink>
+                                    <NavLink to={HomePath.path}>Testimonials</NavLink>
                                 </li>
                             </ul>
                         </div>
@@ -80,16 +80,16 @@ export default function Footer() {
                                 </button>
                             </form>
                             <div className="footer__widget__social">
-                                <Link to={HomePath} target="_blank">
+                                <Link to={HomePath.path} target="_blank">
                                     <i className="fa fa-facebook"></i>
                                 </Link>
-                                <Link to={HomePath} target="_blank">
+                                <Link to={HomePath.path} target="_blank">
                                     <i className="fa fa-instagram"></i>
                                 </Link>
-                                <Link to={HomePath} target="_blank">
+                                <Link to={HomePath.path} target="_blank">
                                     <i className="fa fa-twitter"></i>
                                 </Link>
-                                <Link to={HomePath} target="_blank">
+                                <Link to={HomePath.path} target="_blank">
                                     <i className="fa fa-pinterest"></i>
                                 </Link>
                             </div>

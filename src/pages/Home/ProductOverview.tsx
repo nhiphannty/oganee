@@ -81,7 +81,7 @@ export default function ProductOverview() {
                             ) : (
                                 <div>
                                     <p>You have not viewed any products yet</p>
-                                    <Link to={ShopPath} className="primary-btn">
+                                    <Link to={ShopPath.path} className="primary-btn">
                                         SHOP NOW
                                     </Link>
                                 </div>

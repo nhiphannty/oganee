@@ -12,13 +12,13 @@ export default function RouteLayout() {
             element: <Layout />,
             children: [
                 {
-                    path: HomePath,
+                    path: HomePath.path,
                     element: <Home />,
                     loader: Loader,
                     errorElement: <Error />,
                 },
                 {
-                    path: ShopPath,
+                    path: ShopPath.path,
                     element: <Shop />,
                     loader: Loader,
                     errorElement: <Error />,

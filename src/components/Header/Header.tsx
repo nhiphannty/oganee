@@ -41,16 +41,16 @@ function Header() {
                             <div className="col-lg-6 col-md-6">
                                 <div className="header__top__right">
                                     <div className="header__top__right__social">
-                                        <NavLink to={HomePath}>
+                                        <NavLink to={HomePath.path}>
                                             <i className="fa fa-facebook"></i>
                                         </NavLink>
-                                        <NavLink to={HomePath}>
+                                        <NavLink to={HomePath.path}>
                                             <i className="fa fa-twitter"></i>
                                         </NavLink>
-                                        <NavLink to={HomePath}>
+                                        <NavLink to={HomePath.path}>
                                             <i className="fa fa-linkedin"></i>
                                         </NavLink>
-                                        <NavLink to={HomePath}>
+                                        <NavLink to={HomePath.path}>
                                             <i className="fa fa-pinterest-p"></i>
                                         </NavLink>
                                     </div>
@@ -60,15 +60,15 @@ function Header() {
                                         <span className="arrow_carrot-down"></span>
                                         <ul>
                                             <li>
-                                                <NavLink to={HomePath}>Spanish</NavLink>
+                                                <NavLink to={HomePath.path}>Spanish</NavLink>
                                             </li>
                                             <li>
-                                                <NavLink to={HomePath}>English</NavLink>
+                                                <NavLink to={HomePath.path}>English</NavLink>
                                             </li>
                                         </ul>
                                     </div>
                                     <div className="header__top__right__auth">
-                                        <NavLink to={HomePath}>
+                                        <NavLink to={HomePath.path}>
                                             <i className="fa fa-user"></i> Login
                                         </NavLink>
                                     </div>
@@ -81,7 +81,7 @@ function Header() {
                     <div className="row">
                         <div className="col-lg-3">
                             <div className="header__logo">
-                                <NavLink to={HomePath}>
+                                <NavLink to={HomePath.path}>
                                     <img src={logo} alt="" />
                                 </NavLink>
                             </div>
@@ -90,16 +90,16 @@ function Header() {
                             <nav className="header__menu">
                                 <ul>
                                     <li className="active">
-                                        <NavLink to={HomePath}>Home</NavLink>
+                                        <NavLink to={HomePath.path}>Home</NavLink>
                                     </li>
                                     <li>
-                                        <NavLink to={ShopPath}>Shop</NavLink>
+                                        <NavLink to={ShopPath.path}>Shop</NavLink>
                                     </li>
                                     <li>
-                                        <NavLink to={BlogPath}>Blog</NavLink>
+                                        <NavLink to={BlogPath.path}>Blog</NavLink>
                                     </li>
                                     <li>
-                                        <NavLink to={ContactPath}>Contact</NavLink>
+                                        <NavLink to={ContactPath.path}>Contact</NavLink>
                                     </li>
                                 </ul>
                             </nav>
@@ -108,13 +108,13 @@ function Header() {
                             <div className="header__cart">
                                 <ul>
                                     <li>
-                                        <NavLink to={HomePath}>
+                                        <NavLink to={HomePath.path}>
                                             <i className="fa fa-heart"></i>{" "}
                                             <span>{lovingCart.length ?? 0}</span>
                                         </NavLink>
                                     </li>
                                     <li>
-                                        <NavLink to={HomePath}>
+                                        <NavLink to={HomePath.path}>
                                             <i className="fa fa-shopping-bag"></i>{" "}
                                             <span>{shoppingCart.length ?? 0}</span>
                                         </NavLink>
@@ -150,7 +150,7 @@ function Header() {
                                     }`}>
                                     {categories.map((cate, index) => (
                                         <li key={index}>
-                                            <NavLink to={HomePath}>{cate.name}</NavLink>
+                                            <NavLink to={HomePath.path}>{cate.name}</NavLink>
                                         </li>
                                     ))}
                                 </ul>
