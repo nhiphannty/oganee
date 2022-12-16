@@ -1,40 +1,48 @@
-import { CATEGORY } from "../../common/constants/actionTypes";
+import { createSlice, PayloadAction } from "@reduxjs/toolkit";
+import { CATEGORY_SLICE } from "../../common/constants/sliceNames";
+import { Status, StatusType } from "../../common/constants/status";
+import { ICategory, ICategoryState } from "../../common/interfaces/ICategory";
 
-import { CategoryState, CategoryActions } from "../../common/interfaces/ICategory";
-
-const initialState: CategoryState = {
-    pending: false,
+const initialState: ICategoryState = {
+    loading: false,
     categories: [],
-    error: null,
+    status: 0,
 };
 
-const categoryReducer = (state = initialState, action: CategoryActions) => {
-    switch (action.type) {
-        case CATEGORY.FETCH_REQUEST:
+const CategorySlice = createSlice({
+    name: CATEGORY_SLICE,
+    initialState,
+    reducers: {
+        getCategories: (state: ICategoryState): ICategoryState => {
+            return { ...state, loading: false };
+        },
+        setCategories: (
+            state: ICategoryState,
+            action: PayloadAction<ICategory[]>
+        ): ICategoryState => {
             return {
                 ...state,
-                pending: true,
+                categories: action.payload,
+                status: Status.Success,
+                loading: false,
             };
-        case CATEGORY.FETCH_SUCCESS:
-            console.log(1);
+        },
+        setStatus: (state: ICategoryState, action: PayloadAction<StatusType>): ICategoryState => {
             return {
                 ...state,
-                pending: false,
-                categories: action.payload.categories,
-                error: null,
+                status: action.payload.status,
+                loading: false,
             };
-        case CATEGORY.FETCH_FAILURE:
-            return {
-                ...state,
-                pending: false,
-                categories: [],
-                error: action.payload.error,
-            };
-        default:
-            return {
-                ...state,
-            };
-    }
-};
+        },
+        cleanUp: (state: ICategoryState) => ({
+            ...state,
+            loading: false,
+            status: undefined,
+            error: undefined,
+        }),
+    },
+});
 
-export default categoryReducer;
+export const { getCategories, setCategories, setStatus, cleanUp } = CategorySlice.actions;
+
+export default CategorySlice.reducer;

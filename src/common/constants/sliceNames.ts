@@ -1,0 +1,2 @@
+export const CATEGORY_SLICE = "CATEGORY_SLICE";
+export const PRODUCT_SLICE = "PRODUCT_SLICE";

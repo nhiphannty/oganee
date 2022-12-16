@@ -14,10 +14,11 @@ const store = configureStore({
         }).concat(sagaMiddleware),
 });
 
-sagaMiddleware.run(rootSaga);
+rootSaga.map((saga) => sagaMiddleware.run(saga));
+
+export default store;
 
 export type RootDispatch = typeof store.dispatch;
-export const useAppDispatch = () => useDispatch<RootDispatch>();
 export type RootState = ReturnType<typeof store.getState>;
+export const useAppDispatch = () => useDispatch<RootDispatch>();
 export const useAppSelector: TypedUseSelectorHook<RootState> = useSelector;
-export default store;

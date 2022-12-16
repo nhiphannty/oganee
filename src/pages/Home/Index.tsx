@@ -3,15 +3,17 @@ import { Link, NavLink } from "react-router-dom";
 import { ShopPath } from "../../common/constants/routePath";
 import { useAppDispatch, useAppSelector } from "../../store";
 import { useEffect } from "react";
-import { fetchCategoryRequest } from "../../store/category/actions";
+import { getCategories } from "../../store/category/reducer";
 import { getCategoryImage } from "../../common/utils/getImage";
+import { getProducts } from "../../store/product/reducer";
 
 export default function Home() {
     const dispatch = useAppDispatch();
-    const categories = useAppSelector((state) => state.category?.categories);
+    const categories = useAppSelector((state) => state.categoryReducer?.categories);
 
     useEffect(() => {
-        dispatch(fetchCategoryRequest());
+        // dispatch(getCategories());
+        dispatch(getProducts());
     });
 
     return (

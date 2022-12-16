@@ -11,3 +11,9 @@ export interface IProduct {
     size: string;
     discount: number;
 }
+
+export interface IProductState {
+    loading: boolean;
+    products: IProduct[];
+    status?: number;
+}

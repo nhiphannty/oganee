@@ -1,26 +1,14 @@
-import axios, { AxiosResponse } from "axios";
-import { call, put, takeEvery } from "redux-saga/effects";
+import { call, put, takeLatest } from "redux-saga/effects";
+import { Status } from "../../common/constants/status";
+import { getCategories, setCategories, setStatus } from "./reducer";
+import { getCategoriesRequest } from "./requests";
 
-import { fetchCategoryFailure, fetchCategorySuccess } from "./actions";
-import { CATEGORY } from "../../common/constants/actionTypes";
-import { ICategory } from "../../common/interfaces/ICategory";
-
-const getCategories = () => axios.get<ICategory[]>("http://localhost:5000/categories");
-
-function* fetchCategorySagaHandle() {
+function* getCategoryHandle() {
     try {
-        const response: AxiosResponse<ICategory[]> = yield call(getCategories);
-        yield put(
-            fetchCategorySuccess({
-                categories: response.data,
-            })
-        );
+        const { data } = yield call(getCategoriesRequest);
+        yield put(setCategories(data));
     } catch (e: any) {
-        yield put(
-            fetchCategoryFailure({
-                error: e.message,
-            })
-        );
+        yield put(setStatus({ status: Status.Failed }));
     }
 }
 
@@ -28,6 +16,6 @@ function* fetchCategorySagaHandle() {
   Starts worker saga on latest dispatched `FETCH_REQUEST` action.
   Allows concurrent increments.
 */
-export default function* categorySaga() {
-    yield takeEvery(CATEGORY.FETCH_REQUEST, fetchCategorySagaHandle);
+export default function* CategorySagas() {
+    yield takeLatest(getCategories.type, getCategoryHandle);
 }
