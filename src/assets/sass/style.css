@@ -617,7 +617,7 @@ ol {
   background: transparent;
 }
 
-.sidebar__item__color.sidebar__item__color--gray label:after {
+.sidebar__item__color.sidebar__item__color--yellow label:after {
   background: #E9A625;
 }
 
@@ -625,8 +625,8 @@ ol {
   background: #D62D2D;
 }
 
-.sidebar__item__color.sidebar__item__color--black label:after {
-  background: #252525;
+.sidebar__item__color.sidebar__item__color--orange label:after {
+  background: orangered;
 }
 
 .sidebar__item__color.sidebar__item__color--blue label:after {

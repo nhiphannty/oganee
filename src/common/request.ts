@@ -1,6 +1,6 @@
 import axios, { AxiosInstance, AxiosRequestConfig } from "axios";
 
-const config: AxiosRequestConfig = {
+export const config: AxiosRequestConfig = {
     baseURL: "http://localhost:5000/",
 };
 

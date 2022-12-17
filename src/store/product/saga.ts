@@ -17,10 +17,12 @@ import {
     getProductsRequest,
     getTopRatedProductsRequest,
 } from "./requests";
+import { IQueryProduct } from "../../common/interfaces/IQuery";
+import { PayloadAction } from "@reduxjs/toolkit";
 
-function* getProductsHandle() {
+function* getProductsHandle(action: PayloadAction<IQueryProduct>) {
     try {
-        const { data } = yield call(getProductsRequest);
+        const { data } = yield call(getProductsRequest, action.payload);
         yield put(setProducts(data));
     } catch (e: any) {
         yield put(setStatus({ status: Status.Failed }));

@@ -132,7 +132,7 @@
             "categoryId": "db84797e-1844-4335-a06e-5c072f64462b",
             "image": "almond-nuts-forming-heart-shape-black-background.webp",
             "price": 2,
-            "color": "",
+            "color": "Blue",
             "size": "Tiny",
             "discount": 7
         },
@@ -212,7 +212,7 @@
             "categoryId": "a9d8d6b9-b0b4-40ee-aa4a-fcbe86705679",
             "image": "best-natural-mixed-fruit-juice-drink.webp",
             "price": 1.2,
-            "color": "",
+            "color": "Green",
             "size": "Medium",
             "discount": 0
         },
@@ -222,7 +222,7 @@
             "categoryId": "a9d8d6b9-b0b4-40ee-aa4a-fcbe86705679",
             "image": "2L-Orange-juice-100-juice.webp",
             "price": 4,
-            "color": "",
+            "color": "Orange",
             "size": "Large",
             "discount": 0
         },
@@ -326,7 +326,7 @@
             "categoryId": "58073d06-4e7a-496b-a774-0ed269d5f4dd",
             "image": "n6t1Rr_J_400x400.webp",
             "price": 8,
-            "color": "",
+            "color": "Orange",
             "size": "Medium",
             "discount": 0
         },
@@ -336,7 +336,7 @@
             "categoryId": "db84797e-1844-4335-a06e-5c072f64462b",
             "image": "red-dried-goji-berries-wooden-spoon.webp",
             "price": 41,
-            "color": "",
+            "color": "Red",
             "size": "Tiny",
             "discount": 0
         },

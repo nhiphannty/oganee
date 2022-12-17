@@ -118,7 +118,7 @@
         }
     }
 
-    &.sidebar__item__color--gray {
+    &.sidebar__item__color--yellow {
 
         label {
 
@@ -138,12 +138,12 @@
         }
     }
 
-    &.sidebar__item__color--black {
+    &.sidebar__item__color--orange {
 
         label {
 
             &:after {
-                background: $heading-color-2;
+                background: orangered;
             }
         }
     }

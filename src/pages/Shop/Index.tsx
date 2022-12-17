@@ -1,18 +1,25 @@
 import { Link } from "react-router-dom";
 import { useAppDispatch, useAppSelector } from "../../store";
 import { useEffect, useState } from "react";
-import { getLatestProducts } from "../../store/product/reducer";
+import { getLatestProducts, getProducts } from "../../store/product/reducer";
 import { getProductImage } from "../../common/utils/getImage";
 import Breadcrumb from "../../components/Breadcrumb";
+import { IQueryProduct } from "../../common/interfaces/IQuery";
+import { Color } from "../../common/constants/productSpecs";
 
 export default function Index() {
     const { categories } = useAppSelector((state) => state.categoryReducer);
-    const { latestProducts } = useAppSelector((state) => state.productReducer);
+    const { latestProducts, products } = useAppSelector((state) => state.productReducer);
     const dispatch = useAppDispatch();
-    const [query, setQuery] = useState("");
+    const initialQuery: IQueryProduct = {
+        max: 12,
+        page: 1,
+    };
+    const [query, setQuery] = useState(initialQuery);
 
     useEffect(() => {
         dispatch(getLatestProducts());
+        dispatch(getProducts(query));
     }, [dispatch, query]);
 
     return (
@@ -37,37 +44,37 @@ export default function Index() {
                                     <h4>Colors</h4>
                                     <div className="sidebar__item__color sidebar__item__color--white">
                                         <label htmlFor="white">
-                                            White
+                                            {Color.White}
                                             <input type="radio" id="white" />
                                         </label>
                                     </div>
-                                    <div className="sidebar__item__color sidebar__item__color--gray">
-                                        <label htmlFor="gray">
-                                            Gray
-                                            <input type="radio" id="gray" />
+                                    <div className="sidebar__item__color sidebar__item__color--yellow">
+                                        <label htmlFor="yellow">
+                                            {Color.Yellow}
+                                            <input type="radio" id="yellow" />
                                         </label>
                                     </div>
                                     <div className="sidebar__item__color sidebar__item__color--red">
                                         <label htmlFor="red">
-                                            Red
+                                            {Color.Red}
                                             <input type="radio" id="red" />
                                         </label>
                                     </div>
-                                    <div className="sidebar__item__color sidebar__item__color--black">
-                                        <label htmlFor="black">
-                                            Black
-                                            <input type="radio" id="black" />
+                                    <div className="sidebar__item__color sidebar__item__color--orange">
+                                        <label htmlFor="orange">
+                                            {Color.Orange}
+                                            <input type="radio" id="orange" />
                                         </label>
                                     </div>
                                     <div className="sidebar__item__color sidebar__item__color--blue">
                                         <label htmlFor="blue">
-                                            Blue
+                                            {Color.Blue}
                                             <input type="radio" id="blue" />
                                         </label>
                                     </div>
                                     <div className="sidebar__item__color sidebar__item__color--green">
                                         <label htmlFor="green">
-                                            Green
+                                            {Color.Green}
                                             <input type="radio" id="green" />
                                         </label>
                                     </div>
@@ -142,44 +149,45 @@ export default function Index() {
                                     <div className="col-lg-4 col-md-4">
                                         <div className="filter__found">
                                             <h6>
-                                                <span>16</span> Products found
+                                                <span>{products.totalItems}</span> Products found
                                             </h6>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                             <div className="row">
-                                <div className="col-lg-4 col-md-6 col-sm-6">
-                                    <div className="product__item">
-                                        <div
-                                            className="product__item__pic set-bg"
-                                            data-setbg="img/product/product-1.jpg">
-                                            <ul className="product__item__pic__hover">
-                                                <li>
-                                                    <a href="#">
-                                                        <i className="fa fa-heart"></i>
-                                                    </a>
-                                                </li>
-                                                <li>
-                                                    <a href="#">
-                                                        <i className="fa fa-retweet"></i>
-                                                    </a>
-                                                </li>
-                                                <li>
-                                                    <a href="#">
-                                                        <i className="fa fa-shopping-cart"></i>
-                                                    </a>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                        <div className="product__item__text">
-                                            <h6>
-                                                <a href="#">1</a>
-                                            </h6>
-                                            <h5>$30.00</h5>
+                                {products.items.map((prod, index) => (
+                                    <div className="col-lg-4 col-md-6 col-sm-6" key={index}>
+                                        <div className="product__item">
+                                            <div
+                                                className="product__item__pic set-bg"
+                                                style={{
+                                                    backgroundImage: `url(${getProductImage(
+                                                        prod.image
+                                                    )})`,
+                                                }}>
+                                                <ul className="product__item__pic__hover">
+                                                    <li>
+                                                        <a href="#">
+                                                            <i className="fa fa-heart"></i>
+                                                        </a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="#">
+                                                            <i className="fa fa-shopping-cart"></i>
+                                                        </a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                            <div className="product__item__text">
+                                                <h6>
+                                                    <Link to="#">{prod.name}</Link>
+                                                </h6>
+                                                <h5>${prod.price}</h5>
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
+                                ))}
                             </div>
                             <div className="product__pagination">
                                 <a href="#">1</a>

@@ -11,9 +11,15 @@ export interface IProduct {
 
 export interface IProductState {
     loading: boolean;
-    products: IProduct[];
+    products: IPagedProducts;
     status?: number;
     featuredProducts: IProduct[];
     latestProducts: IProduct[];
     topRatedProducts: IProduct[];
+}
+
+export interface IPagedProducts {
+    totalItems: number;
+    totalPages: number;
+    items: IProduct[];
 }

@@ -1,11 +1,12 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 import { PRODUCT_SLICE } from "../../common/constants/sliceNames";
 import { Status, StatusType } from "../../common/constants/status";
-import { IProduct, IProductState } from "../../common/interfaces/IProduct";
+import { IProduct, IProductState, IPagedProducts } from "../../common/interfaces/IProduct";
+import { IQueryProduct } from "../../common/interfaces/IQuery";
 
 const initialState: IProductState = {
     loading: false,
-    products: [],
+    products: { items: [], totalItems: 0, totalPages: 0 },
     featuredProducts: [],
     latestProducts: [],
     topRatedProducts: [],
@@ -16,10 +17,16 @@ const ProductSlice = createSlice({
     name: PRODUCT_SLICE,
     initialState,
     reducers: {
-        getProducts: (state: IProductState): IProductState => {
+        getProducts: (
+            state: IProductState,
+            action: PayloadAction<IQueryProduct>
+        ): IProductState => {
             return { ...state, loading: false };
         },
-        setProducts: (state: IProductState, action: PayloadAction<IProduct[]>): IProductState => {
+        setProducts: (
+            state: IProductState,
+            action: PayloadAction<IPagedProducts>
+        ): IProductState => {
             return {
                 ...state,
                 products: action.payload,
